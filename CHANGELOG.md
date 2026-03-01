@@ -2,6 +2,29 @@
 
 <!-- version list -->
 
+## v2.2.0 (2026-03-01)
+
+### Bug Fixes
+
+- MàJ du readme.md
+  ([`7d98bca`](https://github.com/tadricardo/release-tag/commit/7d98bcab1607ae2a55a2b5aca1e266a55707d7d8))
+
+### Chores
+
+- MàJ du CHANGELOG.md
+  ([`c1e5330`](https://github.com/tadricardo/release-tag/commit/c1e5330dc4d397615b1b3a6ed3255ef3890aa4a5))
+
+### Documentation
+
+- Documentation
+  ([`713b5a3`](https://github.com/tadricardo/release-tag/commit/713b5a39db60c926c3e8f15c13d8dea3e7e499ba))
+
+### Features
+
+- Ajout d'une pre-commit
+  ([`737214e`](https://github.com/tadricardo/release-tag/commit/737214e909fb47f20c5edc5641e321d45fc9e7f8))
+
+
 ## Unreleased
 
 ### Bug Fixes
