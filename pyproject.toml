@@ -1,5 +1,5 @@
 [project]
-name = "mon-projet"
+name = "release-tag"
 version = "0.1.0"
 
 [tool.semantic_release]
@@ -10,4 +10,4 @@ build_command = ""
 upload_to_pypi = false
 
 [tool.semantic_release.remote]
-type = "github"mk
+type = "github"
