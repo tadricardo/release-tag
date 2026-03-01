@@ -24,3 +24,9 @@ commande de test: python-semantic-release version
 # Commande mettre à jour le fichier CHANGELOG.md en local
 
 - semantic-release changelog
+
+# Mis en place du pre-commit
+
+- pip install pre-commit
+- pre-commit sample-config > .pre-commit-config.yaml
+- pre-commit install
