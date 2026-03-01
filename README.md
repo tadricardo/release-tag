@@ -17,8 +17,10 @@ git commit -m "feat!: changement de BDD MySQL to MariaDB"
 
 commande de test: python-semantic-release version
 
-\*\* exporter ton token Personal access token qui est associé au GH_TOKEN de la CI/CD
+# exporter ton token Personal access token qui est associé au GH_TOKEN de la CI/CD
 
-- set GH_TOKEN=ton_token_ici ou set GH_TOKEN=ton_token_ici pour (Linux/macOS)
-  \*\*Commande mettre à jour le fichier CHANGELOG.md en locat
-  - semantic-release changelog
+- **set GH_TOKEN=ton_token_ici** ou **export GH_TOKEN=ton_token_ici** pour (Linux/macOS)
+
+# Commande mettre à jour le fichier CHANGELOG.md en local
+
+- semantic-release changelog
