@@ -5,15 +5,20 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write # permet au bot de pousser les tags et fichiers
+  actions: read # garde l’accès lecture sur les actions
+  packages: write # si tu publies des packages GitHub (optionnel)
+
 jobs:
   release:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # indispensable pour Semantic Release
 
       - name: Setup Python
         uses: actions/setup-python@v5
