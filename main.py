@@ -1,2 +1,1 @@
-def add():
-    return 2 + 2
+print("correction de l'IHM")
