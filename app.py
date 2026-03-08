@@ -1,4 +1,4 @@
-from flask import jsonify, Flask
+from flask import jsonify, Flask, request, abort
 from sqlalchemy import text
 from flask_sqlalchemy import SQLAlchemy
 from loadotenv import load_env
@@ -16,6 +16,8 @@ app.config[
 
 db = SQLAlchemy(app)
 
+HEALTH_TOKEN = "supersecret"
+
 
 @app.route("/", methods=["GET"])
 def index():
@@ -25,6 +27,11 @@ def index():
 @app.route("/health", methods=["GET"])
 def health():
     try:
+        # requests.get(APP_URL, headers={"X-Health-Token": "supersecret"})
+        if token:
+            token = request.headers.get("X-Health-Token")
+            if token != HEALTH_TOKEN:
+                abort(403)
         # Test DB réel
         db.session.execute(text("SELECT 1"))
         db.session.commit()

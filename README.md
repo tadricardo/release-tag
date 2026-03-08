@@ -35,3 +35,10 @@ commande de test: python-semantic-release version
 # reformation black
 
 - python -m black check_prod.py
+
+🔒 Bonus sécurité production
+
+Dans ton service systemd :
+User=root
+ProtectSystem=full
+ProtectHome=true
