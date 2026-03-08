@@ -284,4 +284,5 @@ RAM : {ram}%
 
 if __name__ == "__main__":
     main()
+    # Variables non utilisées
     print(f"{smtplib} et {EmailMessage}")
