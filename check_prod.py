@@ -1,15 +1,16 @@
-from email.message import EmailMessage
-from datetime import datetime
-from pathlib import Path
-from logging.handlers import RotatingFileHandler
-import os
 import json
-import subprocess
-import requests
+import logging
+import os
 import smtplib
+import subprocess
+from datetime import datetime
+from email.message import EmailMessage
+from logging.handlers import RotatingFileHandler
+from pathlib import Path
+
 import mysql.connector
 import psutil
-import logging
+import requests
 
 # ==============================
 # CONFIGURATION

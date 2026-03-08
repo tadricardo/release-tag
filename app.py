@@ -1,8 +1,9 @@
-from flask import jsonify, Flask, request, abort
-from sqlalchemy import text
+import os
+
+from flask import Flask, abort, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from loadotenv import load_env
-import os
+from sqlalchemy import text
 
 app = Flask(__name__)
 
