@@ -42,3 +42,7 @@ Dans ton service systemd :
 User=root
 ProtectSystem=full
 ProtectHome=true
+
+# mypy
+
+mypy --install-types --non-interactive

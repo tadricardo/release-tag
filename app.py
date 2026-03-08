@@ -29,8 +29,8 @@ def index():
 def health():
     try:
         # requests.get(APP_URL, headers={"X-Health-Token": "supersecret"})
+        token = request.headers.get("X-Health-Token")
         if token:
-            token = request.headers.get("X-Health-Token")
             if token != HEALTH_TOKEN:
                 abort(403)
         # Test DB réel

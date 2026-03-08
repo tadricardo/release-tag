@@ -265,6 +265,7 @@ RAM : {ram}%
         subject = "✅ Rapport quotidien production"
 
         content = f"""
+sujet : {subject}
 Date : {now}
 
 Tous les services sont opérationnels.
@@ -283,3 +284,4 @@ RAM : {ram}%
 
 if __name__ == "__main__":
     main()
+    print(f"{smtplib} et {EmailMessage}")
