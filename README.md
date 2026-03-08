@@ -30,3 +30,8 @@ commande de test: python-semantic-release version
 - pip install pre-commit
 - pre-commit sample-config > .pre-commit-config.yaml
 - pre-commit install
+- pre-commit run --all-files
+
+# reformation black
+
+- python -m black check_prod.py
