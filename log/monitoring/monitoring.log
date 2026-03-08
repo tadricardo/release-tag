@@ -3,3 +3,17 @@
 2026-03-08 12:35:42,809 - INFO - ===== Début monitoring =====
 2026-03-08 12:35:45,499 - INFO - ===== Début monitoring =====
 2026-03-08 12:38:07,917 - INFO - ===== Début monitoring =====
+2026-03-08 15:27:06,594 - INFO - ===== Début monitoring =====
+2026-03-08 15:27:06,626 - ERROR - Connexion MariaDB échouée: 2017 (HY000): Can't open named pipe to host: .  pipe: MySQL (2)
+2026-03-08 15:27:08,669 - WARNING - RAM élevée : 89.1%
+2026-03-08 15:27:08,679 - ERROR - Incident détecté
+2026-03-08 15:27:08,679 - INFO - ===== Fin monitoring =====
+2026-03-08 15:28:24,255 - INFO - ===== Début monitoring =====
+2026-03-08 15:28:24,302 - ERROR - Connexion MariaDB échouée: 2017 (HY000): Can't open named pipe to host: .  pipe: MySQL (2)
+2026-03-08 15:28:26,325 - WARNING - RAM élevée : 89.3%
+2026-03-08 15:28:26,328 - ERROR - Incident détecté
+2026-03-08 15:28:26,332 - INFO - ===== Fin monitoring =====
+2026-03-08 15:31:36,626 - INFO - ===== Début monitoring =====
+2026-03-08 15:31:36,679 - ERROR - Connexion MariaDB échouée: 2017 (HY000): Can't open named pipe to host: .  pipe: MySQL (2)
+2026-03-08 15:31:38,719 - ERROR - Incident détecté
+2026-03-08 15:31:38,735 - INFO - ===== Fin monitoring =====
