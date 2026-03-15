@@ -1,41 +1,28 @@
 import os
 
-from flask import Flask, abort, jsonify, request
-from flask_sqlalchemy import SQLAlchemy
+from flask import Blueprint, abort, jsonify, request
 from loadotenv import load_env
 from sqlalchemy import text
 
-app = Flask(__name__)
-
-load_env()
-USER = os.getenv("USER")
-PASSWORD = os.getenv("PASSWORD")
-
-app.config[
-    "SQLALCHEMY_DATABASE_URI"
-] = f"mysql+pymysql://{USER}:{PASSWORD}@localhost:3307/db_test"
-
-db = SQLAlchemy(app)
-
-HEALTH_TOKEN = "supersecret"
+app_bp = Blueprint("auth", __name__)
 
 
-@app.route("/", methods=["GET"])
+@app_bp.route("/", methods=["GET"])
 def index():
     return {"message": "Bienvenue dans mon application de test 😊"}
 
 
-@app.route("/health", methods=["GET"])
+@app_bp.route("/health", methods=["GET"])
 def health():
     try:
         # requests.get(APP_URL, headers={"X-Health-Token": "supersecret"})
         token = request.headers.get("X-Health-Token")
         if token:
-            if token != HEALTH_TOKEN:
+            if token != os.getenv("HEALTH_TOKEN"):
                 abort(403)
         # Test DB réel
-        db.session.execute(text("SELECT 1"))
-        db.session.commit()
+        session.execute(text("SELECT 1"))
+        session.commit()
 
         return jsonify({"status": "healthy"}), 200
 
@@ -50,7 +37,3 @@ def health():
             ),
             500,
         )
-
-
-if __name__ == "__main__":
-    app.run()

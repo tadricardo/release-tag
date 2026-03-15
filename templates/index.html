@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Session Timeout</title>
+  </head>
+
+  <body>
+    <button onclick="login()">Login</button>
+
+    <script>
+      let token = null;
+      let inactivityTimer = null;
+
+      const TIMEOUT = 5 * 60 * 1000; // 5 minutes
+
+      function login() {
+        fetch("http://localhost:5000/login", {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            username: "admin",
+            password: "password",
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            token = data.access_token;
+
+            startInactivityTimer();
+
+            listenUserActivity();
+          });
+      }
+
+      function startInactivityTimer() {
+        clearTimeout(inactivityTimer);
+
+        inactivityTimer = setTimeout(() => {
+          logout();
+        }, TIMEOUT);
+      }
+
+      function resetTimer() {
+        clearTimeout(inactivityTimer);
+
+        startInactivityTimer();
+      }
+
+      function logout() {
+        alert("Session expirée (5 min d'inactivité)");
+
+        token = null;
+
+        clearTimeout(inactivityTimer);
+
+        window.location.reload();
+      }
+
+      function listenUserActivity() {
+        const events = ["mousemove", "keydown", "click", "scroll"];
+
+        events.forEach((event) => {
+          document.addEventListener(event, resetTimer);
+        });
+      }
+    </script>
+  </body>
+</html>
